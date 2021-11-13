@@ -16,13 +16,13 @@ public class Grid : MonoBehaviour
     // 7x7 grid for test purposes
     private int[][] matrix =
     {
-        new int[]{ 1,3,4,2,3,0,1 },
-        new int[]{ 4,0,0,0,3,1,1 },
         new int[]{ 4,2,1,2,2,2,4 },
-        new int[]{ 0,1,0,1,4,0,3 },
+        new int[]{ 1,3,4,2,3,0,1 },
         new int[]{ 0,2,3,2,4,3,3 },
-        new int[]{ 1,2,0,1,0,3,3 },
-        new int[]{ 1,2,2,4,3,2,1 }
+        new int[]{ 4,0,0,0,3,1,1 },
+        new int[]{ 1,2,2,4,3,2,1 },
+        new int[]{ 0,1,0,1,4,0,3 },
+        new int[]{ 1,2,0,1,0,3,3 }
     };
 
     private GridElement[][] gridElements;
@@ -364,19 +364,19 @@ public class Grid : MonoBehaviour
         switch(id)
         {
             case 0: // blue
-                return new Color32(0, 153, 255, 255);
+                return Color.blue;
 
             case 1: // red
-                return new Color32(255, 0, 0, 255);
+                return Color.red;
 
             case 2: // yellow
-                return new Color32(255, 247, 0, 255);
+                return Color.magenta;
 
             case 3: // green
-                return new Color32(0, 177, 6, 255);
+                return Color.green;
 
             case 4: // purple
-                return new Color(197, 0, 255, 255);
+                return Color.yellow;
             default:
                 return Color.white;
         }

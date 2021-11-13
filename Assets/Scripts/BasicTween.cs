@@ -61,6 +61,13 @@ public class BasicTween : MonoBehaviour
 
             if(node.Value.isDone)
             {
+                if(node.Value.updateMethod != null)
+                {
+                    node.Value.startValue = node.Value.endValue;
+                    node.Value.updateMethod.Invoke(node.Value);
+                }
+
+
                 if(node.Value.onComplete != null)
                 {
                     node.Value.onComplete.Invoke();
