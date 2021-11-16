@@ -3,16 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[DefaultExecutionOrder(-100)]
 public class Grid : MonoBehaviour
 {
-    // we have 5 colors
-    // 0 tank -> blue
-    // 1 warrior -> red
-    // 2 assassin -> yellow
-    // 3 support -> green
-    // 4 marksman -> purple
-
     // 7x7 grid for test purposes
     private int[][] matrix =
     {
@@ -219,8 +211,6 @@ public class Grid : MonoBehaviour
         int row = gridElements.Length;
         int col = gridElements[0].Length;
         LinkedList<GridElement> elements = new LinkedList<GridElement>();
-        //int colorCode = Random.Range(0, 5);
-        //Color color = GetColorCode(colorCode);
 
         for(int j = 0; j < col; j++)
         {
@@ -333,12 +323,6 @@ public class Grid : MonoBehaviour
         Queue<GridElement> queue = new Queue<GridElement>(50); // 50 because we have 7 x 7 grid for now.
         queue.Enqueue(gridElement);
         LinkedList<GridElement> elements = new LinkedList<GridElement>();
-        int[][] visited = new int[matrix.Length][];
-        for(int i = 0; i < matrix.Length; i++)
-        {
-            visited[i] = new int[matrix[i].Length];
-        }
-
         GridElement target = null;
 
         while(queue.Count > 0)
@@ -377,6 +361,7 @@ public class Grid : MonoBehaviour
 
             case 4: // purple
                 return Color.yellow;
+
             default:
                 return Color.white;
         }
